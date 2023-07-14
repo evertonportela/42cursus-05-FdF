@@ -1,2 +1,2 @@
-# 42cursus-05-FdF
-This project is about representing a landscape as a 3D object in which all surfaces are outlined in lines.
+# 42cursus-05-Fract-ol
+ Discover 2D programming and the psychedelic universe of fractals in this project, using minilibX. 
