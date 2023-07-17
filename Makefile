@@ -31,3 +31,10 @@ clean:
 	$(RM) $(OBJ)
 fclean:		clean
 	$(RM) $(NAME)
+
+# Execute Test Code
+test:
+	clear
+	make fclean
+	make
+	./fract-ol.a
