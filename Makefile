@@ -1,6 +1,8 @@
 # Compilation and Flags
 CC			=	cc
-FLAGS		= 	-Wall -Wextra -Werror
+#FLAGS		= 	-Wall -Wextra -Werror
+FLAGS		= 	
+
 
 # Libraries
 INCLUDES	= 	-I./lib/mlx/mlx-linux
@@ -14,7 +16,7 @@ LIBRARY		=	-L./lib/mlx/mlx-linux
 NAME		= fract-ol.a
 
 # Source Files
-SOURCES		= main.c
+SOURCES		= fract-ol.c
 
 # Objects File
 OBJ			= $(SOURCES:%.c=%.o)
