@@ -13,10 +13,10 @@ LIBRARY		=	-L./lib/mlx/mlx-linux
 	$(CC) $(FLAGS) $(INCLUDES) -Imlx_linux -O3 -c $< -o $@
 
 # Library Name
-NAME		= fract-ol.a
+NAME		= fractol
 
 # Source Files
-SOURCES		= fract-ol.c
+SOURCES		= fractol.c
 
 # Objects File
 OBJ			= $(SOURCES:%.c=%.o)
@@ -39,4 +39,5 @@ test:
 	clear
 	make fclean
 	make
-	./fract-ol.a
+#	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all ./fractol
+	./fractol
