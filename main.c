@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 19:36:44 by abrabant          #+#    #+#             */
-/*   Updated: 2023/07/21 15:38:00 by evportel         ###   ########.fr       */
+/*   Updated: 2023/07/26 17:51:28 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 /* The x and y coordinates of the rect corresponds to its upper left corner. */
 
-int render_rect(t_img *img, t_rect rect)
+int	render_rect(t_img *img, t_rect rect)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = rect.y;
 	while (i < rect.y + rect.height)
@@ -129,9 +129,7 @@ int	render(t_data *data)
 		GREEN_PIXEL
 	});
 	render_rect(&data->img, (t_rect){0, 0, 100, 100, RED_PIXEL});
-
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.mlx_img, 0, 0);
-
 	return (0);
 }
 

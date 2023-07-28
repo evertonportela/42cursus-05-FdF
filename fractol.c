@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 16:03:45 by evportel          #+#    #+#             */
-/*   Updated: 2023/07/21 15:44:29 by evportel         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:44:29 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #define WHITE_PIXEL 0xFFFFFF
 #define GREEN_PIXEL 0xFF00
 #define RED_PIXEL 0xFF0000
+#define BLUE_PIXEL 0x00BFFF
 
 typedef struct s_img
 {
@@ -109,8 +110,22 @@ int	render(t_data *data)
 		return (MLX_ERROR);
 	render_background(&data->img, WHITE_PIXEL);
 	render_rectangle(&data->img, (t_rectangle){
-		WINDOW_WIDTH - 100,
-		WINDOW_HEIGHT - 100,
+		0,
+		0,
+		100,
+		100,
+		RED_PIXEL
+	});
+	render_rectangle(&data->img, (t_rectangle){
+		100,
+		100,
+		100,
+		100,
+		BLUE_PIXEL
+	});
+	render_rectangle(&data->img, (t_rectangle){
+		200,
+		0,
 		100,
 		100,
 		GREEN_PIXEL
