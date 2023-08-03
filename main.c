@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 19:36:44 by abrabant          #+#    #+#             */
-/*   Updated: 2023/07/26 17:51:28 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/02 13:10:44 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	render_rect(t_img *img, t_rect rect)
 {
-	int	i;
+	int	i ;
 	int	j;
 
 	i = rect.y;
@@ -91,18 +91,18 @@ int	render_rect(t_img *img, t_rect rect)
 
 void	render_background(t_img *img, int color)
 {
-	int	i;
-	int	j;
+	int	height;
+	int	width;
 
-	i = 0;
-	while (i < WINDOW_HEIGHT)
+	height = 0;
+	while (height < WINDOW_HEIGHT)
 	{
-		j = 0;
-		while (j < WINDOW_WIDTH)
+		width = 0;
+		while (width < WINDOW_WIDTH)
 		{
-			img_pix_put(img, j++, i, color);
+			img_pix_put(img, width++, height, color);
 		}
-		++i;
+		++height;
 	}
 }
 

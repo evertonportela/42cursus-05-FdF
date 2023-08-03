@@ -39,5 +39,11 @@ test:
 	clear
 	make fclean
 	make
-#	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all ./fractol
 	./fractol
+
+# Execute Test Code With valgrind
+valgrind:
+	clear
+	make fclean
+	make
+	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all ./fractol
