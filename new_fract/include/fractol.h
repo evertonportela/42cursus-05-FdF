@@ -6,12 +6,14 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/03 19:10:11 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/04 15:18:28 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
+
+# include <mlx.h>
 
 # define WINDOW_WIDTH 1000
 # define WINDOW_HEIGHT 1000
@@ -86,5 +88,7 @@ typedef struct s_fractol
 	double	arg_imaginary;
 	t_img	image;
 }			t_fractol;
+
+int	mandelbrot(double const_real, double const_imaginary, t_fractol *fractal);
 
 #endif

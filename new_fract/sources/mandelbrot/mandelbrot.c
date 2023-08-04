@@ -6,15 +6,21 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:12:40 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/03 18:43:43 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/04 12:00:23 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-void	init_mandelbrot()
+void	init_mandelbrot(t_fractol *fractol)
 {
-	
+	fractol->min_real = -2.2;
+	fractol->max_real = 1.0;
+	fractol->min_imaginary = -1.5;
+	fractol->max_imaginary = (fractol->max_real - fractol->min_real)
+		* WINDOW_HEIGHT / WINDOW_WIDTH + fractol->min_imaginary;
+	fractol->max_iterator = 100;
+	fractol->color = 265;
 }
 
 int	mandelbrot(double const_real, double const_imaginary, t_fractol *fractal)
