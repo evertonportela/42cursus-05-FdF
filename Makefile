@@ -1,49 +1,63 @@
-# Compilation and Flags
-CC			=	cc
-#FLAGS		= 	-Wall -Wextra -Werror
-FLAGS		= 	
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
+#    Updated: 2023/08/04 15:29:03 by evportel         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# COLOR ********************************************************************** #
+RED		=	\033[31m
+GREEN	=	\033[32m
+YELLOW	=	\033[33m
+BLUE	=	\033[34m
+MAGENTA	=	\033[35m
+CYAN	=	\033[36m
+RESET	=	\033[0m
+
+# VAR ************************************************************************ #
+NAME	=	fractol
+CC		=	cc
+FLAGS	=	-Wall -Wextra -Werror
+MLX		=	-lmlx -lX11 -lXext -lm -lz
+# MLX		=	-Lmlx -Lmlx_linux -Imlx-linux
+
+SRC		=	${addprefix sources/mandelbrot/, mandelbrot.c}\
+			${addprefix sources/julia/, julia.c}\
+			${addprefix sources/, main.c}
+OBJ		=	${SRC:.c=.o}
+HEADER	=	include/fractol.h
+
+# RULES ********************************************************************** #
+all:		${NAME}
 
 
-# Libraries
-INCLUDES	= 	-I./lib/mlx/mlx-linux
-LIBRARY		=	-L./lib/mlx/mlx-linux
+${NAME}:	${OBJ}
+	@printf "${BLUE}All objects created!${RESET}\n"
+	@cc ${FLAGS} -Iinclude ${OBJ} -o $@ ${MLX}
+	@printf "${GREEN}${NAME} created!${RESET}\n"
+	@exit 0
 
-# Generate objects rule
+
 %.o: %.c
-	$(CC) $(FLAGS) $(INCLUDES) -Imlx_linux -O3 -c $< -o $@
+	@printf "${YELLOW}Compiling: ${CYAN}${notdir $<}${RESET}\n"
+	@cc ${FLAGS} -Iinclude -c $< -o $@
 
-# Library Name
-NAME		= fractol
 
-# Source Files
-SOURCES		= fractol.c
-
-# Objects File
-OBJ			= $(SOURCES:%.c=%.o)
-
-# Generate Library Rule
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux $(LIBRARY) -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
-
-# Variables delete files
-RM			= rm -f
-
-# Delete Files Rules
 clean:
-	$(RM) $(OBJ)
+	@rm -fr ${OBJ}
+	@printf "${YELLOW}Objects removed!${RESET}\n"
+
+
 fclean:		clean
-	$(RM) $(NAME)
+	@rm -fr ${NAME}
+	@printf "${RED}${NAME} removed!${RESET}\n"
 
-# Execute Test Code
-test:
-	clear
-	make fclean
-	make
-	./fractol
+re:			fclean ${NAME}
 
-# Execute Test Code With valgrind
-valgrind:
-	clear
-	make fclean
-	make
-	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all ./fractol
+
+.PHONY: all clean fclean re
