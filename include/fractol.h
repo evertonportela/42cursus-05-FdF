@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/05 20:06:44 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/05 21:08:21 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 
 # define WIN_WIDTH 1000
 # define WIN_HEIGHT 1000
+
+# define FCTL_COLOR_CYAN 0x5CFAE2
+# define FCTL_COLOR_PINK 0XFA75FA
+# define FCTL_COLOR_YELLOW 0XFAD343
 
 # define MLX_ERROR 1
 # define MLX_SUCCESS 0
