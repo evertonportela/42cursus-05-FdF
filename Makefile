@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/04 15:29:03 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/07 17:29:37 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ MLX		=	-lmlx -lX11 -lXext -lm -lz
 
 SRC		=	${addprefix sources/mandelbrot/, mandelbrot.c}\
 			${addprefix sources/julia/, julia.c}\
+			${addprefix sources/utils/, ft_strncmp.c}\
+			${addprefix sources/utils/, utils_check_args.c}\
+			${addprefix sources/utils/, utils_struct_init.c}\
 			${addprefix sources/, main.c}
 OBJ		=	${SRC:.c=.o}
 HEADER	=	include/fractol.h

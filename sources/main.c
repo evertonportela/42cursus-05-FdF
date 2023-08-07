@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:24:22 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/05 21:22:38 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/07 17:25:37 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,35 +73,19 @@ int	frct_draw(t_fractol *fractol)
 	return (MLX_SUCCESS);
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	t_fractol fract;
-	
-	/** Init MLX **/
-	fract.mlx_ptr = mlx_init();
-	if (fract.mlx_ptr == NULL)
+	t_fractol	fract;
+
+	if (utils_check_args(argc, argv, &fract) == MLX_ERROR)
 		return (MLX_ERROR);
-	
-	/** Init New Window **/
-	fract.win_ptr = mlx_new_window(fract.mlx_ptr, WIN_WIDTH, WIN_HEIGHT, "Fract-ol");
-	if (fract.win_ptr == NULL)
-	{
-		free(fract.win_ptr);
+	if (int	utils_mlx_init(t_fractol *fract) == MLX_ERROR)
 		return (MLX_ERROR);
-	}
-	
-	/** Init MLX Image **/
-	fract.image.mlx_img = mlx_new_image(fract.mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
-	
-	/** Init MLX Address **/
-	fract.image.address = mlx_get_data_addr(fract.image.mlx_img, &fract.image.bits_pixel,
-		&fract.image.line_length, &fract.image.endian);
-	
 	/** Init Mandelbrot **/
-	fract.max_real = 2.0;
-	fract.min_real = -2.0;
-	fract.max_imaginary = 2.0;
-	fract.min_imaginary = -2.0;
+	fract.max_real = 1.0;
+	fract.min_real = -2.2;
+	fract.max_imaginary = (fract.max_real - fract.min_real) * WIN_HEIGHT/WIN_WIDTH + fract.min_imaginary;
+	fract.min_imaginary = -1.5;
 	fract.max_iterator = 100;
 	fract.color = 0;
 	fract.args = 0;
@@ -113,8 +97,6 @@ int	main(void)
 	// mlx_destroy_window();
 	// mlx_destroy_display();
 	// free();
-
-	mlx_loop(fract.mlx_ptr);
-	
+	mlx_loop(fract.mlx_ptr);	
 	return (MLX_SUCCESS);
 }

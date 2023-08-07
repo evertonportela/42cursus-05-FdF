@@ -6,15 +6,16 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/05 21:08:21 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/07 18:03:05 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include <mlx.h>
 # include <stdlib.h>
+# include <unistd.h>
+# include <mlx.h>
 
 # define WIN_WIDTH 1000
 # define WIN_HEIGHT 1000
@@ -82,6 +83,16 @@ typedef struct s_fractol
 	t_img	image;
 }			t_fractol;
 
-int	mandelbrot(double const_real, double const_imaginary, t_fractol *fractal);
+/* Functions Fractol */
+int		fct_mandelbrot(double const_real, double const_imaginary,
+			t_fractol *fractal);
+void	fct_init_mandelbrot(t_fractol *fract);
+
+/* Funtions Utils */
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		utils_check_args(int argc, char *argv[], t_fractol *fract);
+int		utils_mlx_init(t_fractol *fract);
+int		utils_error_message(void);
+void	utils_set_fractol_init(t_fractol *fract);
 
 #endif
