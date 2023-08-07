@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:24:22 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/07 17:25:37 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/07 18:11:16 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,8 @@ int	main(int argc, char *argv[])
 
 	if (utils_check_args(argc, argv, &fract) == MLX_ERROR)
 		return (MLX_ERROR);
-	if (int	utils_mlx_init(t_fractol *fract) == MLX_ERROR)
+	if (utils_mlx_init(&fract) == MLX_ERROR)
 		return (MLX_ERROR);
-	/** Init Mandelbrot **/
-	fract.max_real = 1.0;
-	fract.min_real = -2.2;
-	fract.max_imaginary = (fract.max_real - fract.min_real) * WIN_HEIGHT/WIN_WIDTH + fract.min_imaginary;
-	fract.min_imaginary = -1.5;
-	fract.max_iterator = 100;
-	fract.color = 0;
 	fract.args = 0;
 	
 	/** Init MLX Loop Hook **/
