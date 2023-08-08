@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/08 17:51:08 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/08 18:06:44 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@
 # include <unistd.h>
 # include <mlx.h>
 
-# define WIN_WIDTH 1280
-# define WIN_HEIGHT 720
+// # define WIN_WIDTH 1280
+// # define WIN_HEIGHT 720
+
+# define WIN_WIDTH 640
+# define WIN_HEIGHT 480
 
 # define FCTL_COLOR_CYAN 0x5CFAE2
 # define FCTL_COLOR_PINK 0XFA75FA

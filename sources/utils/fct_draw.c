@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:00:13 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/08 17:36:26 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/08 18:18:08 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	fct_draw(t_fractol *fract)
 	double	y;
 	int		iterator;
 
+	mlx_clear_window(fract->mlx_ptr, fract->win_ptr);
 	x = 0;
 	iterator = 0;
 	while (x++ < WIN_WIDTH)
