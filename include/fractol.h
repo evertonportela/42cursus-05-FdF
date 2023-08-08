@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/07 18:03:05 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/08 17:51:08 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <unistd.h>
 # include <mlx.h>
 
-# define WIN_WIDTH 1000
-# define WIN_HEIGHT 1000
+# define WIN_WIDTH 1280
+# define WIN_HEIGHT 720
 
 # define FCTL_COLOR_CYAN 0x5CFAE2
 # define FCTL_COLOR_PINK 0XFA75FA
@@ -87,6 +87,8 @@ typedef struct s_fractol
 int		fct_mandelbrot(double const_real, double const_imaginary,
 			t_fractol *fractal);
 void	fct_init_mandelbrot(t_fractol *fract);
+int		fct_draw(t_fractol *fract);
+void	fct_color(int x, int y, int iterator, t_fractol *fract);
 
 /* Funtions Utils */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:46:14 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/07 16:24:54 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:45:37 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	utils_error_message(void)
 
 int	utils_check_args(int argc, char *argv[], t_fractol *fract)
 {
+	fract->fractol = 0;
 	if (argc < 2 || argc > 4)
 		return (utils_error_message());
 	else if (ft_strncmp(argv[1], "Mandelbrot", 11) == 0)
