@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:00:13 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/08 18:18:08 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/09 17:52:14 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,12 @@ static double	fct_map_imaginary(int y, t_fractol *fract)
 	return (fract->min_imaginary + (y * range) / WIN_HEIGHT);
 }
 
-int	fct_draw(t_fractol *fract)
+static void	fct_select_fractal_draw(t_fractol *fract)
 {
 	double	x;
 	double	y;
 	int		iterator;
 
-	mlx_clear_window(fract->mlx_ptr, fract->win_ptr);
 	x = 0;
 	iterator = 0;
 	while (x++ < WIN_WIDTH)
@@ -42,11 +41,24 @@ int	fct_draw(t_fractol *fract)
 		y = 0;
 		while (y++ < WIN_HEIGHT)
 		{
-			iterator = fct_mandelbrot(fct_map_real(x, fract),
-					fct_map_imaginary(y, fract), fract);
-			fct_color(x, y, iterator, fract);
+			if (fract->fractol == 1)
+				iterator = fct_mandelbrot(fct_map_real(x, fract),
+						fct_map_imaginary(y, fract), fract);
+			else if (fract->fractol == 2)
+				utils_error_message();
+			if (iterator == fract->max_iterator)
+				fct_pixel_print(&fract->image, x, y, 0x000000);
+			else
+				fct_pixel_print(&fract->image, x, y,
+					fract->color * iterator * iterator);
 		}
 	}
+}
+
+int	fct_draw(t_fractol *fract)
+{
+	mlx_clear_window(fract->mlx_ptr, fract->win_ptr);
+	fct_select_fractal_draw(fract);
 	mlx_put_image_to_window(fract->mlx_ptr, fract->win_ptr,
 		fract->image.mlx_img, 0, 0);
 	return (MLX_SUCCESS);

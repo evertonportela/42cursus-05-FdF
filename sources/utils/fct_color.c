@@ -6,13 +6,13 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:30:18 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/08 18:17:08 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/09 17:15:20 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-static void	fct_pixel_print(t_img *image, int x, int y, int color)
+void	fct_pixel_print(t_img *image, int x, int y, int color)
 {
 	char	*pixel;
 
@@ -32,7 +32,3 @@ void	fct_color(int x, int y, int iterator, t_fractol *fract)
 		color = FCTL_COLOR_CYAN;
 	fct_pixel_print(&fract->image, x, y, color);
 }
-
-
-// int	mlx_clear_window(void *mlx_ptr, void *win_ptr);
-// int	mlx_pixel_put(void *mlx_ptr, void *win_ptr, int x, int y, int color);
