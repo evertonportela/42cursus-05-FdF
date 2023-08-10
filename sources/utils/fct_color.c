@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:30:18 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/09 17:15:20 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/10 11:24:06 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,13 @@ void	fct_color(int x, int y, int iterator, t_fractol *fract)
 		color = FCTL_COLOR_CYAN;
 	fct_pixel_print(&fract->image, x, y, color);
 }
+
+/*
+void	img_pix_put(t_img *img, int x, int y, int color)
+{
+	char	*pixel;
+
+	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	*(int *)pixel = color;
+}
+*/

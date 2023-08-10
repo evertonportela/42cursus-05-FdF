@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/09 17:42:06 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/10 15:38:23 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ NAME	=	fractol
 CC		=	cc
 FLAGS	=	-Wall -Wextra -Werror
 MLX		=	-lmlx -lX11 -lXext -lm -lz
-# MLX		=	-Lmlx -Lmlx_linux -Imlx-linux
 
 SRC		=	${addprefix sources/mandelbrot/, fct_mandelbrot.c}\
 			${addprefix sources/julia/, fct_julia.c}\
