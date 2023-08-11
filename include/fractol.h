@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/10 17:31:39 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/11 11:46:27 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef struct s_fractol
 int		fct_mandelbrot(double const_real, double const_imaginary,
 			t_fractol *fractal);
 void	fct_init_mandelbrot(t_fractol *fract);
+void	fct_init_julia(t_fractol *fract);
 int		fct_draw(t_fractol *fract);
 void	fct_color(int x, int y, int iterator, t_fractol *fract);
 void	fct_pixel_print(t_img *image, int x, int y, int color);
@@ -101,5 +102,6 @@ int		utils_mlx_init(t_fractol *fract);
 int		utils_error_message(void);
 void	utils_set_fractol_init(t_fractol *fract);
 int		utils_key_input(int key, t_fractol *fract);
+int		utils_close_window(t_fractol *fract);
 
 #endif

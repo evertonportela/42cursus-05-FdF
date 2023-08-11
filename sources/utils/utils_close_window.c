@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct_julia.c                                        :+:      :+:    :+:   */
+/*   utils_close_window.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/11 11:44:38 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/11 11:47:05 by evportel         ###   ########.fr       */
+/*   Created: 2023/08/11 10:08:00 by evportel          #+#    #+#             */
+/*   Updated: 2023/08/11 10:21:39 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-void	fct_init_julia(t_fractol *fract)
+int	utils_close_window(t_fractol *fract)
 {
-	fract->max_real = 1.0;
-	fract->min_real = -2.2;
-	fract->max_imaginary = (fract->max_real - fract->min_real) * WIN_HEIGHT / WIN_WIDTH + fract->min_imaginary;
-	fract->min_imaginary = -1.5;
-	fract->max_iterator = 100;
-	fract->color = 265;
+	mlx_destroy_image(fract->mlx_ptr, fract->image.mlx_img);
+	mlx_destroy_window(fract->mlx_ptr, fract->win_ptr);
+	mlx_destroy_display(fract->mlx_ptr);
+	free(fract->mlx_ptr);
+	exit(MLX_SUCCESS);
 }

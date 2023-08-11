@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 16:55:35 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/08 15:54:21 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/11 11:44:17 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 /** 
  * If fractal is 1, initialize mandelbrot
  * If fractal is 2, initialize julia
-
-	// else if (fract->fractol == 2)
-	// 	fct_init_julia(fract);
- * 
  * */
 void	utils_set_fractol_init(t_fractol *fract)
 {
 	if (fract->fractol == 1)
 		fct_init_mandelbrot(fract);
+	else if (fract->fractol == 2)
+		fct_init_julia(fract);
 }
 
 /** 
@@ -38,7 +36,7 @@ int	utils_mlx_init(t_fractol *fract)
 	if (fract->mlx_ptr == NULL)
 		return (MLX_ERROR);
 	fract->win_ptr = mlx_new_window(fract->mlx_ptr, WIN_WIDTH, WIN_HEIGHT,
-			"Fract-ol");
+			"42SP - Fract-ol");
 	if (fract->win_ptr == NULL)
 	{
 		free(fract->win_ptr);

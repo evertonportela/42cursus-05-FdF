@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:46:14 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/08 15:45:37 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/11 12:12:21 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	utils_error_message(void)
 	write(1, "Use ./fractol [Fractal Name]\n", 30);
 	write(1, "(1) Mandelbrot\n", 16);
 	write(1, "(2) Julia [real param] [imaginary param]\n", 42);
-	write(1, "Suggestions: [-0.4] [0.6] | [0.285] [0] | [0.45] [0.1428]\n", 59);
+	write(1, "Suggestions: [-0.4] [0.6]\t| [0.285] [0]\t| [0.45] [0.1428]\n", 59);
+	write(1, "Suggestions: [-0.6] [-0.2] | [-0.54] [0.5] | [-0.08] [0.72]\n", 59);
 	return (MLX_ERROR);
 }
 
