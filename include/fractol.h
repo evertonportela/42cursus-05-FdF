@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/11 11:46:27 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/12 15:28:13 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ typedef struct s_fractol
 
 /* Functions Fractol */
 int		fct_mandelbrot(double const_real, double const_imaginary,
+			t_fractol *fractal);
+int		fct_julia(double const_real, double const_imaginary,
 			t_fractol *fractal);
 void	fct_init_mandelbrot(t_fractol *fract);
 void	fct_init_julia(t_fractol *fract);

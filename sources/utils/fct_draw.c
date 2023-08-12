@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:00:13 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/10 11:32:29 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/12 15:29:29 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ static void	fct_select_fractal_draw(t_fractol *fract)
 				iterator = fct_mandelbrot(fct_map_real(x, fract),
 						fct_map_imaginary(y, fract), fract);
 			else if (fract->fractol == 2)
-				utils_error_message();
+				iterator = fct_julia(fct_map_real(x, fract),
+						fct_map_imaginary(y, fract), fract);
 			if (iterator == fract->max_iterator)
 				fct_pixel_print(&fract->image, x, y, 0x000000);
 			else

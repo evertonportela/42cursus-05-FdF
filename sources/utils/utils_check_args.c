@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:46:14 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/11 12:12:21 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/12 16:40:27 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	utils_error_message(void)
 	write(1, "Use ./fractol [Fractal Name]\n", 30);
 	write(1, "(1) Mandelbrot\n", 16);
 	write(1, "(2) Julia [real param] [imaginary param]\n", 42);
-	write(1, "Suggestions: [-0.4] [0.6]\t| [0.285] [0]\t| [0.45] [0.1428]\n", 59);
-	write(1, "Suggestions: [-0.6] [-0.2] | [-0.54] [0.5] | [-0.08] [0.72]\n", 59);
+	write(1, "Suggestions:\n", 14);
+	write(1, "[-0.4] [0.6]  | [0.285] [0]   | [0.45]  [0.1428]\n", 50);
+	write(1, "[-0.6] [-0.2] | [-0.54] [0.5] | [-0.08] [0.72]\n", 48);
 	return (MLX_ERROR);
 }
 
@@ -35,7 +36,10 @@ int	utils_check_args(int argc, char *argv[], t_fractol *fract)
 	else if (ft_strncmp(argv[1], "Julia", 6) == 0)
 	{	
 		fract->fractol = 2;
-		return (MLX_SUCCESS);
+		if (fct_check_args_julia(argc, argv, fract) == 0)
+			return (MLX_SUCCESS);
+		else
+			return (utils_error_message());
 	}
 	else
 		return (utils_error_message());

@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 11:44:38 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/11 11:47:05 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/12 17:15:14 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,44 @@
 
 void	fct_init_julia(t_fractol *fract)
 {
-	fract->max_real = 1.0;
-	fract->min_real = -2.2;
+	fract->max_real = 2.0;
+	fract->min_real = -2.0;
 	fract->max_imaginary = (fract->max_real - fract->min_real) * WIN_HEIGHT / WIN_WIDTH + fract->min_imaginary;
-	fract->min_imaginary = -1.5;
-	fract->max_iterator = 100;
+	fract->min_imaginary = -2.0;
+	fract->max_iterator = 250;
+	fract->arg_real = -0.6;
+	fract->arg_imaginary = -0.2;
 	fract->color = 265;
+}
+
+int	fct_check_args_julia(int argc, char *argv[], t_fractol fract)
+{
+	if (argc != 4)
+		return (MLX_ERROR);
+	fract.arg_real = utils_char_to_double(argv[2]);
+	if (fract.arg_real < -2.0 || fract.arg_real > 2.0)
+		return (MLX_ERROR);
+	return (MLX_SUCCESS);
+}
+
+int	fct_julia(double const_real, double const_imaginary, t_fractol *fractal)
+{
+	double	coord_x;
+	double	coord_y;
+	double	aux;
+	int		iterator;
+
+	coord_x = const_real;
+	coord_y = const_imaginary;
+	iterator = 0;
+	while (iterator < fractal->max_iterator)
+	{
+		aux = coord_x * coord_x - coord_y * coord_y + fractal->arg_real;
+		coord_y = 2 * coord_x * coord_y - fractal->arg_imaginary;
+		coord_x = aux;
+		if (coord_x * coord_x + coord_y * coord_y > 4)
+			return (iterator);
+		iterator++;
+	}
+	return (iterator);
 }

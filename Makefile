@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/11 10:24:14 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/12 17:12:54 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RESET	=	\033[0m
 # VAR ************************************************************************ #
 NAME	=	fractol
 CC		=	cc
-FLAGS	=	-Wall -Wextra -Werror
+# FLAGS	=	-Wall -Wextra -Werror
 MLX		=	-lmlx -lX11 -lXext -lm -lz
 
 SRC		=	${addprefix sources/mandelbrot/, fct_mandelbrot.c}\
