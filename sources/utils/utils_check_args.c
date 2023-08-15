@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:46:14 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/15 11:12:49 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/15 11:42:18 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	utils_error_message(void)
 	write(1, "(1) Mandelbrot\n", 16);
 	write(1, "(2) Julia [real param] [imaginary param]\n", 42);
 	write(1, "Suggestions:\n", 14);
-	write(1, "[-0.4] [0.6]  | [0.285] [0]   | [0.45]  [0.1428]\n", 50);
-	write(1, "[-0.6] [-0.2] | [-0.54] [0.5] | [-0.08] [0.72]\n", 48);
+	write(1, "-0.4  0.6 |  0.285 0   |  0.45 0.1428\n", 39);
+	write(1, "-0.6 -0.2 | -0.54  0.5 | -0.08 0.72\n", 37);
 	return (MLX_ERROR);
 }
 
