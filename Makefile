@@ -6,7 +6,7 @@
 #    By: evertonsantos <evertonsantos@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/15 19:05:26 by evertonsant      ###   ########.fr        #
+#    Updated: 2023/08/15 20:00:00 by evertonsant      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,10 @@ RESET	=	\033[0m
 # VAR ************************************************************************ #
 NAME	=	fractol
 CC		=	cc
-# FLAGS	=	-Wall -Wextra -Werror
+FLAGS	=	-Wall -Wextra -Werror
 MLX		=	-lmlx -lX11 -lXext -lm -lz
+# MLX		=	-lmlx -framework OpenGL -framework AppKit 
+
 
 SRC		=	${addprefix sources/mandelbrot/, fct_mandelbrot.c}\
 			${addprefix sources/julia/, fct_julia.c}\
