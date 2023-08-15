@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:46:14 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/12 16:40:27 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/15 11:12:49 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	utils_check_args(int argc, char *argv[], t_fractol *fract)
 	else if (ft_strncmp(argv[1], "Julia", 6) == 0)
 	{	
 		fract->fractol = 2;
-		if (fct_check_args_julia(argc, argv, fract) == 0)
+		if (fct_check_args_julia(argc, argv, fract) == 0) //funcao de checagem incompleta
 			return (MLX_SUCCESS);
 		else
 			return (utils_error_message());

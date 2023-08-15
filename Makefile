@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/12 17:12:54 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/15 11:15:23 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC		=	${addprefix sources/mandelbrot/, fct_mandelbrot.c}\
 			${addprefix sources/utils/, fct_color.c}\
 			${addprefix sources/utils/, fct_draw.c}\
 			${addprefix sources/utils/, ft_strncmp.c}\
+			${addprefix sources/utils/, utils_char_to_double.c}\
 			${addprefix sources/utils/, utils_check_args.c}\
 			${addprefix sources/utils/, utils_close_window.c}\
 			${addprefix sources/utils/, utils_key_input.c}\
