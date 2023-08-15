@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
+#    By: evertonsantos <evertonsantos@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/15 11:15:23 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/15 19:05:26 by evertonsant      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC		=	${addprefix sources/mandelbrot/, fct_mandelbrot.c}\
 			${addprefix sources/utils/, utils_check_args.c}\
 			${addprefix sources/utils/, utils_close_window.c}\
 			${addprefix sources/utils/, utils_key_input.c}\
+			${addprefix sources/utils/, utils_mouse_zoom.c}\
 			${addprefix sources/utils/, utils_struct_init.c}\
 			${addprefix sources/, main.c}
 OBJ		=	${SRC:.c=.o}

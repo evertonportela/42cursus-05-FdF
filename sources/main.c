@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: evertonsantos <evertonsantos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:24:22 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/15 11:54:49 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/15 18:59:42 by evertonsant      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,3 @@ int	main(int argc, char *argv[])
 	mlx_loop(fract.mlx_ptr);
 	return (MLX_SUCCESS);
 }
-
-	// mlx_hook();
-	// mlx_destroy_image();
-	// mlx_destroy_window();
-	// mlx_destroy_display();
-	// free();
-
-		mlx_hook(f.win_ptr, 4, 1L << 2, &mouse_zoom, &f);
