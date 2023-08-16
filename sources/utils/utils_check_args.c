@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:46:14 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 11:10:30 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/16 12:00:15 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int	utils_error_message(void)
 	write(1, "Suggestions:\n", 14);
 	write(1, "-0.4  0.6 |  0.285 0   |  0.45 0.1428\n", 39);
 	write(1, "-0.6 -0.2 | -0.54  0.5 | -0.08 0.72\n", 37);
+	write(1, "Keyboard Shotcuts:\n", 20);
+	write(1, "Q - Iterations Out\t'-' Zoom Out\n", 33);
+	write(1, "E - Iteration In\t'+' Zoom In\n", 30);
 	return (MLX_ERROR);
 }
 
