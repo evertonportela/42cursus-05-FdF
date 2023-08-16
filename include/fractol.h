@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 11:28:47 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/16 11:41:57 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,6 @@ void	utils_update_iterator(int key, t_fractol *fract);
 int		utils_close_window(t_fractol *fract);
 double	utils_char_to_double(char *str);
 int		utils_mouse_zoom(int key_pressed, t_fractol *fract);
+void	utils_keyboard_zoom(int key_pressed, t_fractol *fract);
 
 #endif
