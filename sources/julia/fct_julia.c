@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 11:44:38 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 11:00:09 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/16 11:09:56 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	fct_init_julia(t_fractol *fract)
 {
 	fract->max_real = 2.0;
 	fract->min_real = -2.0;
-	fract->max_imaginary = (fract->max_real - fract->min_real) * WIN_HEIGHT / WIN_WIDTH + fract->min_imaginary;
+	fract->max_imaginary = (fract->max_real - fract->min_real)
+		* WIN_HEIGHT / WIN_WIDTH + fract->min_imaginary;
 	fract->min_imaginary = -2.0;
 	fract->max_iterator = 250;
 	fract->color = 265;
