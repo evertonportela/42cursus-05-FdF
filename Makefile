@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/16 10:26:37 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/16 11:29:07 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC		=	${addprefix sources/mandelbrot/, fct_mandelbrot.c}\
 			${addprefix sources/utils/, utils_key_input.c}\
 			${addprefix sources/utils/, utils_mouse_zoom.c}\
 			${addprefix sources/utils/, utils_struct_init.c}\
+			${addprefix sources/utils/, utils_update_iterator.c}\
 			${addprefix sources/, main.c}
 OBJ		=	${SRC:.c=.o}
 HEADER	=	include/fractol.h
@@ -78,6 +79,6 @@ devm:
 devj:
 	clear
 	@make re
-	./fractol Julia -0.6 0.4
+	./fractol Julia -0.08 0.724
 
 .PHONY: all clean fclean re

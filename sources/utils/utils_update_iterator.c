@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_key_input.c                                  :+:      :+:    :+:   */
+/*   utils_update_iterator.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 12:27:52 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 11:33:01 by evportel         ###   ########.fr       */
+/*   Created: 2023/08/16 11:26:04 by evportel          #+#    #+#             */
+/*   Updated: 2023/08/16 11:33:20 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-int	utils_key_input(int key, t_fractol *fract)
+void	utils_update_iterator(int key, t_fractol *fract)
 {
-	if (key == XK_Escape)
-		utils_close_window(fract);
-	else if (key == 'q' || key == 'e')
-		utils_update_iterator(key, fract);
-	return (MLX_SUCCESS);
+	if (key == 'e')
+		fract->max_iterator += 10;
+	if (key == 'q')
+		fract->max_iterator -= 10;
 }
