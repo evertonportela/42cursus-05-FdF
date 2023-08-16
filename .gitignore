@@ -56,3 +56,6 @@ dkms.conf
 
 # MiniLibX
 /minilibx_opengl_20191021
+
+# VS Code
+./vscode
