@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 09:18:30 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 09:18:36 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/16 11:17:14 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 int	utils_mouse_zoom(int key_pressed, t_fractol *fract)
 {
-	if (key_pressed == 4)
+	int	x;
+	int	y;
+
+	x = 1;
+	y = 1;
+	if (key_pressed == 4 && x)
 	{
 		fract->min_real -= fract->min_real * 0.1;
 		fract->max_real -= fract->max_real * 0.1;
 		fract->min_imaginary -= fract->min_imaginary * 0.1;
 		fract->max_imaginary -= fract->max_imaginary * 0.1;
 	}
-	if (key_pressed == 5)
+	if (key_pressed == 5 && y)
 	{
 		fract->min_real += fract->min_real * 0.1;
 		fract->max_real += fract->max_real * 0.1;
