@@ -6,17 +6,14 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 09:18:30 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 11:45:56 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/16 12:01:55 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-int	utils_mouse_zoom(int key_pressed, t_fractol *fract)
+int	utils_mouse_zoom(int key_pressed, int x, int y, t_fractol *fract)
 {
-	int	x;
-	int	y;
-
 	x = 1;
 	y = 1;
 	if (key_pressed == 4 && x)
