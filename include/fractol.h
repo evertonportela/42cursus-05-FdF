@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 09:19:40 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/16 10:37:03 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@
 # include <mlx.h>
 # include <X11/keysym.h>
 
-// # define WIN_WIDTH 640
-// # define WIN_HEIGHT 480
-# define WIN_WIDTH 1000
-# define WIN_HEIGHT 1000
+# define WIN_WIDTH 800.0
+# define WIN_HEIGHT 800.0
 
 # define FCTL_COLOR_CYAN 0x5CFAE2
 # define FCTL_COLOR_PINK 0XFA75FA
@@ -91,8 +89,10 @@ int		fct_mandelbrot(double const_real, double const_imaginary,
 			t_fractol *fractal);
 int		fct_julia(double const_real, double const_imaginary,
 			t_fractol *fractal);
+
 void	fct_init_mandelbrot(t_fractol *fract);
 void	fct_init_julia(t_fractol *fract);
+
 int		fct_check_args_julia(int argc, char *argv[], t_fractol *fract);
 int		fct_draw(t_fractol *fract);
 void	fct_color(int x, int y, int iterator, t_fractol *fract);
@@ -101,6 +101,7 @@ void	fct_pixel_print(t_img *image, int x, int y, int color);
 /* Funtions Utils */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		utils_check_args(int argc, char *argv[], t_fractol *fract);
+int		utils_check_double(char *str);
 int		utils_mlx_init(t_fractol *fract);
 int		utils_error_message(void);
 void	utils_set_fractol_init(t_fractol *fract);
