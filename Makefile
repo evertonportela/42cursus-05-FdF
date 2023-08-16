@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: evertonsantos <evertonsantos@student.42    +#+  +:+       +#+         #
+#    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/15 20:00:00 by evertonsant      ###   ########.fr        #
+#    Updated: 2023/08/16 09:18:56 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

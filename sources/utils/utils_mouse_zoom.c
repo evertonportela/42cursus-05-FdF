@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_mouse_zoom.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evertonsantos <evertonsantos@student.42    +#+  +:+       +#+        */
+/*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 16:02:55 by evertonsant       #+#    #+#             */
-/*   Updated: 2023/08/15 20:00:31 by evertonsant      ###   ########.fr       */
+/*   Created: 2023/08/16 09:18:30 by evportel          #+#    #+#             */
+/*   Updated: 2023/08/16 09:18:36 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	utils_mouse_zoom(int key_pressed, t_fractol *fract)
 {
-
 	if (key_pressed == 4)
 	{
 		fract->min_real -= fract->min_real * 0.1;

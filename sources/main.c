@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evertonsantos <evertonsantos@student.42    +#+  +:+       +#+        */
+/*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/04 14:24:22 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/15 18:59:42 by evertonsant      ###   ########.fr       */
+/*   Created: 2023/08/16 09:17:06 by evportel          #+#    #+#             */
+/*   Updated: 2023/08/16 09:17:20 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

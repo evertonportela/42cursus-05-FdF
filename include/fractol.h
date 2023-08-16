@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evertonsantos <evertonsantos@student.42    +#+  +:+       +#+        */
+/*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/15 20:01:08 by evertonsant      ###   ########.fr       */
+/*   Updated: 2023/08/16 09:19:40 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,6 @@ void	utils_set_fractol_init(t_fractol *fract);
 int		utils_key_input(int key, t_fractol *fract);
 int		utils_close_window(t_fractol *fract);
 double	utils_char_to_double(char *str);
-int	utils_mouse_zoom(int key_pressed, t_fractol *fract);
+int		utils_mouse_zoom(int key_pressed, t_fractol *fract);
+
 #endif
