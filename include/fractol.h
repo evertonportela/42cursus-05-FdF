@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 12:02:16 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/17 11:36:48 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ typedef struct s_img
  * @param max_real Limit of the plane that will be mapped to the window.
  * @param min_imaginary Limit of the plane that will be mapped to the window.
  * @param max_imaginary Limit of the plane that will be mapped to the window.
- * @param args Indicates the number of arguments passed to the program.
  * @param arg_real Represent arguments related to the fractal parameter.
  * @param arg_imaginary Represent arguments related to the fractal parameter.
  * @param image Store the fractal drawing before it is plotted in the window.
@@ -74,11 +73,10 @@ typedef struct s_fractol
 	int		color;
 	double	x0;
 	double	y0;
-	double	min_real;
-	double	max_real;
-	double	min_imaginary;
-	double	max_imaginary;
-	int		args;
+	float	min_real;
+	float	max_real;
+	float	min_imaginary;
+	float	max_imaginary;
 	double	arg_real;
 	double	arg_imaginary;
 	t_img	image;
