@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/17 11:36:48 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:35:59 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef struct s_fractol
 	float	max_real;
 	float	min_imaginary;
 	float	max_imaginary;
+	int		args;
 	double	arg_real;
 	double	arg_imaginary;
 	t_img	image;
