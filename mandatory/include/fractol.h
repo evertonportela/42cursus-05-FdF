@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/17 14:35:59 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/20 12:47:01 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ void	fct_init_julia(t_fractol *fract);
 
 int		fct_check_args_julia(int argc, char *argv[], t_fractol *fract);
 int		fct_draw(t_fractol *fract);
-void	fct_color(int x, int y, int iterator, t_fractol *fract);
 void	fct_pixel_print(t_img *image, int x, int y, int color);
 
 /* Funtions Utils */
