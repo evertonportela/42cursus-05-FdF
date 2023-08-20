@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 09:17:06 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 11:18:18 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/20 12:15:15 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "../include/fractol_bonus.h"
 
-/** 
- * Checks - Valid Arguments
- * Checks - Initialize Atributes MLX
- * Initialize Loops and Hooks
- * */
 int	main(int argc, char *argv[])
 {
 	t_fractol	fract;
