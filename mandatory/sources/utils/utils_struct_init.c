@@ -6,15 +6,12 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 16:55:35 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 09:18:47 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/20 12:06:07 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
-/** 
- * If fractal is 1, initialize mandelbrot
- * If fractal is 2, initialize julia
- * */
+
 void	utils_set_fractol_init(t_fractol *fract)
 {
 	if (fract->fractol == 1)
@@ -23,13 +20,6 @@ void	utils_set_fractol_init(t_fractol *fract)
 		fct_init_julia(fract);
 }
 
-/** 
- * Init MLX
- * Init MLX New Window
- * Init MLX Image
- * Init MLX Address
- * Choose and Initialize the Fractal
- * */
 int	utils_mlx_init(t_fractol *fract)
 {
 	fract->mlx_ptr = mlx_init();

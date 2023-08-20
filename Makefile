@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/20 11:58:05 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/20 12:04:33 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,14 +89,16 @@ fclean:		clean
 
 re:			fclean ${NAME}
 
-devm:
-	clear
-	@make re
-	./fractol Mandelbrot
+# TEST RULES ************************************************************* #
 
-devj:
+testm:
 	clear
 	@make re
-	./fractol Julia -0.08 0.724
+	./fractol_bonus Mandelbrot
+
+testj:
+	clear
+	@make re
+	./fractol_bonus Julia -0.08 0.724
 
 .PHONY: all bonus clean fclean re
