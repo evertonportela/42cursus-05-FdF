@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct_tricorn.c                                      :+:      :+:    :+:   */
+/*   fct_tricorn_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:12:40 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 17:05:30 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:20:52 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	fct_init_tricorn(t_fractol *fract)
 	fract->max_imaginary = (fract->max_real - fract->min_real)
 		* (WIN_HEIGHT / WIN_WIDTH) + fract->min_imaginary;
 	fract->max_iterator = 100;
-	fract->color = 2;
+	fract->color = 1;
 	fract->args = 0;
 }
 

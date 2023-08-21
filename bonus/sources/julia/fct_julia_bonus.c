@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct_julia.c                                        :+:      :+:    :+:   */
+/*   fct_julia_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 11:44:38 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 17:06:36 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:20:38 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	fct_init_julia(t_fractol *fract)
 	fract->max_imaginary = (fract->max_real - fract->min_real)
 		* (WIN_HEIGHT / WIN_WIDTH) + fract->min_imaginary;
 	fract->max_iterator = 250;
-	fract->color = 265;
+	fract->color = 0;
 }
 
 int	fct_check_args_julia(int argc, char *argv[], t_fractol *fract)
