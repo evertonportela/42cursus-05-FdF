@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/20 12:04:33 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/21 17:53:03 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,19 @@ NAME_BONUS		=	fractol_bonus
 
 SRC_BONUS		=	${addprefix bonus/sources/mandelbrot/, fct_mandelbrot_bonus.c}\
 					${addprefix bonus/sources/julia/, fct_julia_bonus.c}\
-					${addprefix bonus/sources/, main.c}
+					${addprefix bonus/sources/tricorn/, fct_tricorn_bonus.c}\
+					${addprefix bonus/sources/utils/, fct_color_bonus.c}\
+					${addprefix bonus/sources/utils/, fct_draw_bonus.c}\
+					${addprefix bonus/sources/utils/, ft_strncmp_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_char_to_double_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_check_args_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_check_double_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_key_input_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_close_window_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_fractol_zoom_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_struct_init_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_update_iterator_bonus.c}\
+					${addprefix bonus/sources/, main_bonus.c}
 
 OBJ_BONUS		=	${SRC_BONUS:.c=.o}
 HEADER_BONUS	=	/bonus/include/fractol_bonus.h
@@ -68,9 +80,9 @@ ${NAME}:	${OBJ}
 	@cc ${FLAGS} -Iinclude -c $< -o $@
 
 # RULES BONUS **************************************************************** #
-bonus:		$(BONUS)
+bonus:			$(NAME_BONUS)
 
-${BONUS}:	${OBJ_BONUS}
+${NAME_BONUS}:	${OBJ_BONUS}
 	@printf "${BLUE}All objects bonus created!${RESET}\n"
 	@cc ${FLAGS} -Iinclude ${OBJ_BONUS} -o $@ ${MLX}
 	@printf "${GREEN}${NAME_BONUS} created!${RESET}\n"
@@ -94,11 +106,13 @@ re:			fclean ${NAME}
 testm:
 	clear
 	@make re
+	@make bonus
 	./fractol_bonus Mandelbrot
 
 testj:
 	clear
 	@make re
+	@make bonus
 	./fractol_bonus Julia -0.08 0.724
 
 .PHONY: all bonus clean fclean re

@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_char_to_double.c                             :+:      :+:    :+:   */
+/*   utils_check_double_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/12 17:17:19 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 17:44:03 by evportel         ###   ########.fr       */
+/*   Created: 2023/08/16 10:27:23 by evportel          #+#    #+#             */
+/*   Updated: 2023/08/21 17:45:32 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/fractol.h"
+#include "../../include/fractol_bonus.h"
 
-double	utils_char_to_double(char *str)
+int	utils_check_double(char *str)
 {
-	int		signal;
-	int		index;
-	double	result;
-	double	power;
+	int	index;
 
-	signal = 1;
 	index = 0;
-	result = 0;
-	power = 1;
-	while ((str[index] >= 9 && str[index] <= 13) || str[index] == ' ')
+	while (str[index] == ' ')
 		index++;
 	if (str[index] == '-' || str[index] == '+')
-		if (str[index++] == '-')
-			signal *= -1;
+		index++;
 	while (str[index] >= '0' && str[index] <= '9')
-		result = result * 10 + str[index++] - '0';
+		index++;
 	if (str[index] == '.')
 		index++;
 	while (str[index] >= '0' && str[index] <= '9')
-	{
-		result = result * 10 + str[index++] - '0';
-		power *= 10;
-	}
-	result = signal * result / power;
-	return (result);
+		index++;
+	while (str[index] == ' ')
+		index++;
+	if (str[index] == '\0')
+		return (MLX_SUCCESS);
+	return (MLX_ERROR);
 }

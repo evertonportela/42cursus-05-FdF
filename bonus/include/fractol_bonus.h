@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/20 12:14:40 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/21 17:39:56 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@
 
 # define WIN_WIDTH 800.0
 # define WIN_HEIGHT 800.0
-
-# define FCTL_COLOR_CYAN 0x5CFAE2
-# define FCTL_COLOR_PINK 0XFA75FA
-# define FCTL_COLOR_YELLOW 0XFAD343
 
 # define MLX_ERROR 1
 # define MLX_SUCCESS 0
@@ -88,9 +84,12 @@ int		fct_mandelbrot(double const_real, double const_imaginary,
 			t_fractol *fractal);
 int		fct_julia(double const_real, double const_imaginary,
 			t_fractol *fractal);
+int		fct_tricorn(double const_real, double const_imaginary,
+			t_fractol *fractal);
 
 void	fct_init_mandelbrot(t_fractol *fract);
 void	fct_init_julia(t_fractol *fract);
+void	fct_init_tricorn(t_fractol *fract);
 
 int		fct_check_args_julia(int argc, char *argv[], t_fractol *fract);
 int		fct_draw(t_fractol *fract);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_char_to_double.c                             :+:      :+:    :+:   */
+/*   utils_char_to_double_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 17:17:19 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 17:44:03 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/21 17:44:13 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/fractol.h"
+#include "../../include/fractol_bonus.h"
 
 double	utils_char_to_double(char *str)
 {

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct_color.c                                        :+:      :+:    :+:   */
+/*   fct_color_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:30:18 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/16 11:13:33 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/21 17:39:19 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/fractol.h"
+#include "../../include/fractol_bonus.h"
 
 void	fct_pixel_print(t_img *image, int x, int y, int color)
 {
@@ -21,14 +21,23 @@ void	fct_pixel_print(t_img *image, int x, int y, int color)
 	*(unsigned int *)pixel = color;
 }
 
-// void	fct_color(int x, int y, int iterator, t_fractol *fract)
-// {
-// 	int	color;
+int	fct_color_pack_1(int number)
+{
+	if (number % 8 == 0)
+	{
+		return (0xff5232);
+	}
+	return (0);
+}
 
-// 	color = 0;
-// 	if (iterator == fract->max_iterator)
-// 		color = 0x000000;
-// 	else
-// 		color = FCTL_COLOR_CYAN;
-// 	fct_pixel_print(&fract->image, x, y, color);
-// }
+void	fct_color(int x, int y, int iterator, t_fractol *fract)
+{
+	int	color;
+
+	color = 0;
+	if (iterator == fract->max_iterator)
+		color = 0x000000;
+	else
+		color = 0xFFFFFF;
+	fct_pixel_print(&fract->image, x, y, color);
+}
