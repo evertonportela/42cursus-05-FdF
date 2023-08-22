@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 09:18:30 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 15:13:23 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:43:07 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static void	utils_mouse_zoom_move(int x, int y, t_fractol *fract)
 {
-	x -= WIN_WIDTH / 2;
-	y -= WIN_HEIGHT / 2;
+	x -= WIDTH / 2;
+	y -= HEIGHT / 2;
 	fract->mid_win_x = fract->max_imaginary - fract->min_imaginary;
 	fract->mid_win_y = fract->max_real - fract->min_real;
 	if (y < 0)
 	{
-		fract->max_imaginary = ;
-		fract->min_imaginary = ;
+		fract->max_imaginary -= fract->mid_win_y * ((ft_abs(y) / HEIGHT) * 0.5);
+		fract->min_imaginary -= fract->mid_win_y * ((ft_abs(y) / HEIGHT) * 0.5);
 	}
 }
 
@@ -35,8 +35,9 @@ int	utils_mouse_zoom(int key_pressed, int x, int y, t_fractol *fract)
 		fract->max_real -= x * 0.115;
 		fract->min_imaginary += y * 0.115;
 		fract->max_imaginary -= y * 0.115;
-		utils_mouse_zoom_move(x, y, WIN_WIDTH / 2, WIN_HEIGHT / 2, fract);
+		utils_mouse_zoom_move(x, y, fract);
 	}
+	return (MLX_SUCCESS);
 }
 
 void	utils_keyboard_zoom(int key_pressed, t_fractol *fract)

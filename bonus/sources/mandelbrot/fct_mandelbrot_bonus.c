@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:12:40 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 18:13:01 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:32:49 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	fct_init_mandelbrot(t_fractol *fract)
 	fract->max_real = 1.0;
 	fract->min_imaginary = -1.5;
 	fract->max_imaginary = (fract->max_real - fract->min_real)
-		* (WIN_HEIGHT / WIN_WIDTH) + fract->min_imaginary;
+		* (HEIGHT / WIDTH) + fract->min_imaginary;
 	fract->max_iterator = 100;
 	fract->color = 0;
 }

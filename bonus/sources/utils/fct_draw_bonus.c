@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:00:13 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 12:13:35 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:32:54 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ double	fct_map_real(int x, t_fractol *fract)
 	double	range;
 
 	range = fract->max_real - fract->min_real;
-	return (fract->min_real + (x * range) / WIN_WIDTH);
+	return (fract->min_real + (x * range) / WIDTH);
 }
 
 double	fct_map_imaginary(int y, t_fractol *fract)
@@ -25,7 +25,7 @@ double	fct_map_imaginary(int y, t_fractol *fract)
 	double	range;
 
 	range = fract->max_imaginary - fract->min_imaginary;
-	return (fract->min_imaginary + (y * range) / WIN_HEIGHT);
+	return (fract->min_imaginary + (y * range) / HEIGHT);
 }
 
 static void	fct_select_fractal_draw(t_fractol *fract)
@@ -36,10 +36,10 @@ static void	fct_select_fractal_draw(t_fractol *fract)
 
 	x = 0;
 	iterator = 0;
-	while (x++ < WIN_WIDTH)
+	while (x++ < WIDTH)
 	{
 		y = 0;
-		while (y++ < WIN_HEIGHT)
+		while (y++ < HEIGHT)
 		{
 			if (fract->fractol == 1)
 				iterator = fct_mandelbrot(fct_map_real(x, fract),

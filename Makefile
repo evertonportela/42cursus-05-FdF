@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/22 12:52:08 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/22 15:42:33 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ SRC_BONUS		=	${addprefix bonus/sources/mandelbrot/, fct_mandelbrot_bonus.c}\
 					${addprefix bonus/sources/utils/, fct_color_bonus.c}\
 					${addprefix bonus/sources/utils/, fct_draw_bonus.c}\
 					${addprefix bonus/sources/utils/, ft_strncmp_bonus.c}\
+					${addprefix bonus/sources/utils/, ft_abs_bonus.c}\
 					${addprefix bonus/sources/utils/, utils_char_to_double_bonus.c}\
 					${addprefix bonus/sources/utils/, utils_check_args_bonus.c}\
 					${addprefix bonus/sources/utils/, utils_check_double_bonus.c}\

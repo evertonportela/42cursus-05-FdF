@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 15:14:21 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:42:18 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <mlx.h>
 # include <X11/keysym.h>
 
-# define WIN_WIDTH 800.0
-# define WIN_HEIGHT 800.0
+# define WIDTH 800.0
+# define HEIGHT 800.0
 
 # define MLX_ERROR 1
 # define MLX_SUCCESS 0
@@ -103,6 +103,7 @@ void	fct_pixel_print(t_img *image, int x, int y, int color);
 
 /* Funtions Utils */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+double	ft_abs(double number);
 int		utils_check_args(int argc, char *argv[], t_fractol *fract);
 int		utils_check_double(char *str);
 int		utils_mlx_init(t_fractol *fract);

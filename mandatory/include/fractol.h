@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 15:11:58 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:32:59 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <mlx.h>
 # include <X11/keysym.h>
 
-# define WIN_WIDTH 800.0
-# define WIN_HEIGHT 800.0
+# define WIDTH 800.0
+# define HEIGHT 800.0
 
 # define MLX_ERROR 1
 # define MLX_SUCCESS 0

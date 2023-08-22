@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:12:40 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 10:07:05 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:36:57 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	fct_init_tricorn(t_fractol *fract)
 	fract->max_real = 2.0;
 	fract->min_imaginary = -2.0;
 	fract->max_imaginary = (fract->max_real - fract->min_real)
-		* (WIN_HEIGHT / WIN_WIDTH) + fract->min_imaginary;
+		* (HEIGHT / WIDTH) + fract->min_imaginary;
 	fract->max_iterator = 100;
 	fract->color = 0;
 	fract->args = 0;
