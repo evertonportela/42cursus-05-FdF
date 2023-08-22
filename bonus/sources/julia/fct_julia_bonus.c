@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 11:44:38 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 18:20:38 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:47:38 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ int	fct_check_args_julia(int argc, char *argv[], t_fractol *fract)
 	fract->arg_imaginary = utils_char_to_double(argv[3]);
 	if (fract->arg_imaginary < -2.0 || fract->arg_imaginary > 2.0)
 		return (MLX_ERROR);
+	if (fract->arg_imaginary == 0 && fract->arg_real == 0)
+		fract->args = 0;
+	else
+		fract->args = 1;
 	return (MLX_SUCCESS);
 }
 

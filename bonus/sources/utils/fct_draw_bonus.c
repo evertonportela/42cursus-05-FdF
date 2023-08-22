@@ -6,13 +6,13 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:00:13 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 17:22:29 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:13:35 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol_bonus.h"
 
-static double	fct_map_real(int x, t_fractol *fract)
+double	fct_map_real(int x, t_fractol *fract)
 {
 	double	range;
 
@@ -20,7 +20,7 @@ static double	fct_map_real(int x, t_fractol *fract)
 	return (fract->min_real + (x * range) / WIN_WIDTH);
 }
 
-static double	fct_map_imaginary(int y, t_fractol *fract)
+double	fct_map_imaginary(int y, t_fractol *fract)
 {
 	double	range;
 

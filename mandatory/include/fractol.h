@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 17:27:51 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:11:58 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ typedef struct s_img
  * @param max_iterator Represents maximum iterations for calculating a fractal.
  * @param fractol Indicates which type of fractal will be drawn.
  * @param color Represents the color used in the fractal design.
- * @param x0 Initial value of the X coordinate in the plane.
- * @param y0 Initial value of the Y coordinate in the plane.
  * @param min_real Limit of the plane that will be mapped to the window.
  * @param max_real Limit of the plane that will be mapped to the window.
  * @param min_imaginary Limit of the plane that will be mapped to the window.
@@ -67,8 +65,6 @@ typedef struct s_fractol
 	int		max_iterator;
 	int		fractol;
 	int		color;
-	double	x0;
-	double	y0;
 	float	min_real;
 	float	max_real;
 	float	min_imaginary;

@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:56:36 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/21 18:06:29 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:14:21 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ typedef struct s_img
  * @param max_iterator Represents maximum iterations for calculating a fractal.
  * @param fractol Indicates which type of fractal will be drawn.
  * @param color Represents the color used in the fractal design.
- * @param x0 Initial value of the X coordinate in the plane.
- * @param y0 Initial value of the Y coordinate in the plane.
+ * @param mid_win_x .
+ * @param mid_win_y .
  * @param min_real Limit of the plane that will be mapped to the window.
  * @param max_real Limit of the plane that will be mapped to the window.
  * @param min_imaginary Limit of the plane that will be mapped to the window.
@@ -67,8 +67,8 @@ typedef struct s_fractol
 	int		max_iterator;
 	int		fractol;
 	int		color;
-	double	x0;
-	double	y0;
+	double	mid_win_x;
+	double	mid_win_y;
 	float	min_real;
 	float	max_real;
 	float	min_imaginary;
@@ -93,8 +93,12 @@ void	fct_init_tricorn(t_fractol *fract);
 
 int		fct_check_args_julia(int argc, char *argv[], t_fractol *fract);
 int		fct_draw(t_fractol *fract);
+double	fct_map_real(int x, t_fractol *fract);
+double	fct_map_imaginary(int y, t_fractol *fract);
 void	fct_color(int x, int y, int iterator, t_fractol *fract);
 int		fct_color_pack_1(int number);
+int		fct_color_pack_2(int number);
+int		fct_color_pack_3(int number);
 void	fct_pixel_print(t_img *image, int x, int y, int color);
 
 /* Funtions Utils */
@@ -108,6 +112,7 @@ int		utils_key_input(int key, t_fractol *fract);
 void	utils_update_iterator(int key, t_fractol *fract);
 int		utils_close_window(t_fractol *fract);
 double	utils_char_to_double(char *str);
+int		utils_mouse_motion(int x, int y, t_fractol *fract);
 int		utils_mouse_zoom(int key_pressed, int x, int y, t_fractol *fract);
 void	utils_keyboard_zoom(int key_pressed, t_fractol *fract);
 

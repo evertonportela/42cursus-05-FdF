@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp_bonus.c                                 :+:      :+:    :+:   */
+/*   utils_mouse_motion.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 17:21:53 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 10:51:51 by evportel         ###   ########.fr       */
+/*   Created: 2023/08/22 12:09:45 by evportel          #+#    #+#             */
+/*   Updated: 2023/08/22 12:18:03 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol_bonus.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	utils_mouse_motion(int x, int y, t_fractol *fract)
 {
-	unsigned long int	index;
-
-	index = 0;
-	while (index < n && (s1[index] != '\0' || s2[index] != '\0'))
+	if (fract->fractol == 2 && fract->args == 0)
 	{
-		if (s1[index] != s2[index])
-			return ((unsigned char)s1[index] - (unsigned char)s2[index]);
-		index++;
+		fract->arg_real = fct_map_real(x, fract);
+		fract->arg_imaginary = fct_map_imaginary(y, fract);
 	}
-	return (0);
+	return (MLX_SUCCESS);
 }

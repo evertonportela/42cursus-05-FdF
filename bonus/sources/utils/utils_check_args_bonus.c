@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:46:14 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 10:28:08 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:28:06 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	utils_error_message(void)
 {
-	write(1, "Use ./fractol [Fractal Name]\n", 30);
+	write(1, "Use ./fractol_bonus [Fractal Name]\n", 36);
 	write(1, "(1) Mandelbrot\n\n", 17);
 	write(1, "(2) Julia [real param] [imaginary param]\n", 42);
 	write(1, "Suggestions:\n", 14);
@@ -24,6 +24,8 @@ int	utils_error_message(void)
 	write(1, "Keyboard Shotcuts:\n", 20);
 	write(1, "Q - Iterations Out\t'-' Zoom Out\n", 33);
 	write(1, "E - Iteration In\t'+' Zoom In\n", 30);
+	write(1, "R - Reset Visualization\n", 25);
+	write(1, "C - Change Color Pack\n", 23);
 	return (MLX_ERROR);
 }
 

@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/21 17:53:03 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/22 12:52:08 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RESET	=	\033[0m
 # FLAGS MANDATORY ************************************************************ #
 NAME	=	fractol
 CC		=	cc
-FLAGS	=	-Wall -Wextra -Werror
+FLAGS	=	-O3 -Wall -Wextra -Werror
 MLX		=	-lmlx -lX11 -lXext -lm -lz
 
 
@@ -59,6 +59,7 @@ SRC_BONUS		=	${addprefix bonus/sources/mandelbrot/, fct_mandelbrot_bonus.c}\
 					${addprefix bonus/sources/utils/, utils_key_input_bonus.c}\
 					${addprefix bonus/sources/utils/, utils_close_window_bonus.c}\
 					${addprefix bonus/sources/utils/, utils_fractol_zoom_bonus.c}\
+					${addprefix bonus/sources/utils/, utils_mouse_motion_bonus.c}\
 					${addprefix bonus/sources/utils/, utils_struct_init_bonus.c}\
 					${addprefix bonus/sources/utils/, utils_update_iterator_bonus.c}\
 					${addprefix bonus/sources/, main_bonus.c}

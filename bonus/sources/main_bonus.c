@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 09:17:06 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/20 12:15:15 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:22:13 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char *argv[])
 		return (MLX_ERROR);
 	mlx_loop_hook(fract.mlx_ptr, &fct_draw, &fract);
 	mlx_hook(fract.win_ptr, 2, 1L << 0, &utils_key_input, &fract);
+	mlx_hook(fract.win_ptr, 6, 1L << 6, &utils_mouse_motion, &fract);
 	mlx_hook(fract.win_ptr, 4, 1L << 2, &utils_mouse_zoom, &fract);
 	mlx_hook(fract.win_ptr, 17, 0L, &utils_close_window, &fract);
 	mlx_loop(fract.mlx_ptr);
