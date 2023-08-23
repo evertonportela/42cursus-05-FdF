@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/23 11:44:23 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/23 11:46:13 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ RESET	=	\033[0m
 # FLAGS MANDATORY ************************************************************ #
 NAME	=	fractol
 CC		=	cc
-FLAGS	=	-O3 -Wall -Wextra -Werror
+# FLAGS	=	-O3 -Wall -Wextra -Werror
+FLAGS	=	-Wall -Wextra -Werror
 MLX		=	-lmlx -lX11 -lXext -lm -lz
 
 
