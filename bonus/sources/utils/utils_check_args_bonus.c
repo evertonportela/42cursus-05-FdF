@@ -6,7 +6,7 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:46:14 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 12:28:06 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:45:43 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	utils_error_message(void)
 	write(1, "(2) Julia [real param] [imaginary param]\n", 42);
 	write(1, "Suggestions:\n", 14);
 	write(1, "-0.4  0.6 |  0.285 0   |  0.45 0.1428\n", 39);
-	write(1, "-0.6 -0.2 | -0.54  0.5 | -0.08 0.72\n\n", 38);
+	write(1, "-0.6 -0.2 | -0.54  0.5 | -0.08 0.72\n", 38);
+	write(1, "  0    0  | There's something magical :D\n\n", 43);
 	write(1, "(3) Tricorn\n\n", 14);
 	write(1, "Keyboard Shotcuts:\n", 20);
 	write(1, "Q - Iterations Out\t'-' Zoom Out\n", 33);

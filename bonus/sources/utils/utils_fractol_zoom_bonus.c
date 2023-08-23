@@ -6,37 +6,79 @@
 /*   By: evportel <evportel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 09:18:30 by evportel          #+#    #+#             */
-/*   Updated: 2023/08/22 15:43:07 by evportel         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:55:08 by evportel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol_bonus.h"
 
-static void	utils_mouse_zoom_move(int x, int y, t_fractol *fract)
+static void	utils_zoom_updown(double zoom, char *direction, t_fractol *fract)
 {
-	x -= WIDTH / 2;
-	y -= HEIGHT / 2;
-	fract->mid_win_x = fract->max_imaginary - fract->min_imaginary;
-	fract->mid_win_y = fract->max_real - fract->min_real;
-	if (y < 0)
+	if (ft_strncmp(direction, "down", 5) == 0)
 	{
-		fract->max_imaginary -= fract->mid_win_y * ((ft_abs(y) / HEIGHT) * 0.5);
-		fract->min_imaginary -= fract->mid_win_y * ((ft_abs(y) / HEIGHT) * 0.5);
+		fract->min_real += (fract->max_imaginary - fract->min_imaginary) * zoom;
+		fract->max_real -= (fract->max_imaginary - fract->min_imaginary) * zoom;
+		fract->min_imaginary += (fract->max_real - fract->min_real) * zoom;
+		fract->max_imaginary = (fract->max_real - fract->min_real)
+			* HEIGHT / WIDTH + fract->min_imaginary;
+	}
+	else if (ft_strncmp(direction, "up", 3) == 0)
+	{
+		fract->min_real -= (fract->max_imaginary - fract->min_imaginary) * zoom;
+		fract->max_real += (fract->max_imaginary - fract->min_imaginary) * zoom;
+		fract->min_imaginary -= (fract->max_real - fract->min_real) * zoom;
+		fract->max_imaginary = (fract->max_real - fract->min_real)
+			* HEIGHT / WIDTH + fract->min_imaginary;
+	}
+}
+
+static void	utils_zoom_leftright(double zoom, char *direction, t_fractol *fract)
+{
+	double	refresh_x;
+	double	refresh_y;
+
+	refresh_x = fract->max_real - fract-> min_real;
+	refresh_y = fract->max_imaginary - fract-> min_imaginary;
+	if (ft_strncmp(direction, "right", 6) == 0)
+	{
+		fract->min_real += refresh_x * zoom;
+		fract->max_real += refresh_x * zoom;
+	}
+	else if (ft_strncmp(direction, "left", 5) == 0)
+	{
+		fract->min_real -= refresh_x * zoom;
+		fract->max_real -= refresh_x * zoom;
+	}
+	if (ft_strncmp(direction, "up", 3) == 0)
+	{
+		fract->min_imaginary -= refresh_y * zoom;
+		fract->max_imaginary -= refresh_y * zoom;
+	}
+	else if (ft_strncmp(direction, "down", 5) == 0)
+	{
+		fract->min_imaginary += refresh_y * zoom;
+		fract->max_imaginary += refresh_y * zoom;
 	}
 }
 
 int	utils_mouse_zoom(int key_pressed, int x, int y, t_fractol *fract)
 {
-	x = fract->max_real - fract->min_real;
-	y = fract->max_imaginary - fract->min_imaginary;
 	if (key_pressed == 4)
 	{
-		fract->min_real += x * 0.115;
-		fract->max_real -= x * 0.115;
-		fract->min_imaginary += y * 0.115;
-		fract->max_imaginary -= y * 0.115;
-		utils_mouse_zoom_move(x, y, fract);
+		utils_zoom_updown(0.1, "down", fract);
+		x -= WIDTH / 2;
+		y -= HEIGHT / 2;
+		if (x < 0)
+			utils_zoom_leftright(ft_abs(x) / WIDTH, "left", fract);
+		else if (x > 0)
+			utils_zoom_leftright(x / WIDTH, "right", fract);
+		else if (y < 0)
+			utils_zoom_leftright(ft_abs(y) / HEIGHT, "up", fract);
+		else if (y > 0)
+			utils_zoom_leftright(y / HEIGHT, "down", fract);
 	}
+	if (key_pressed == 5)
+		utils_zoom_updown(0.1, "up", fract);
 	return (MLX_SUCCESS);
 }
 
@@ -62,27 +104,3 @@ void	utils_keyboard_zoom(int key_pressed, t_fractol *fract)
 		fract->max_imaginary += refresh_imaginary * 0.125;
 	}
 }
-
-
-/**
-int	utils_mouse_zoom(int key_pressed, int x, int y, t_fractol *fract)
-{
-	x = 1;
-	y = 1;
-	if (key_pressed == 4 && x)
-	{
-		fract->min_real -= fract->min_real * 0.125;
-		fract->max_real -= fract->max_real * 0.125;
-		fract->min_imaginary -= fract->min_imaginary * 0.125;
-		fract->max_imaginary -= fract->max_imaginary * 0.125;
-	}
-	if (key_pressed == 5 && y)
-	{
-		fract->min_real += fract->min_real * 0.125;
-		fract->max_real += fract->max_real * 0.125;
-		fract->min_imaginary += fract->min_imaginary * 0.125;
-		fract->max_imaginary += fract->max_imaginary * 0.125;
-	}
-	return (MLX_SUCCESS);
-}
-*/
