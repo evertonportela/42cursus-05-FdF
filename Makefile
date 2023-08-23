@@ -6,7 +6,7 @@
 #    By: evportel <evportel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 11:48:03 by evportel          #+#    #+#              #
-#    Updated: 2023/08/23 11:03:02 by evportel         ###   ########.fr        #
+#    Updated: 2023/08/23 11:44:23 by evportel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,7 @@ ${NAME_BONUS}:	${OBJ_BONUS}
 clean:
 	@rm -fr ${OBJ}
 	@rm -fr ${OBJ_BONUS}
-	@printf "${YELLOW}All objects removed!${RESET}\n"
+	@printf "${MAGENTA}All objects removed!${RESET}\n"
 
 fclean:		clean
 	@rm -fr ${NAME}
