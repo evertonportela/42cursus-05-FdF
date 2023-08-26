@@ -55,4 +55,6 @@ Uma funcionalidade muito linda, que apesar de não estar contemplada no plano of
 
 Capturando as coordenadas de referência do ponteiro do mouse e aplicando em tempo real a fórmula de geração do Fractal Julia.
 
-[](./assets/video_example_mouse_motion.webm)
+<p align="center">
+	<a href="#"><img src="assets/video_example_mouse_motion.gif" width="500rem"/></a>
+</p>
